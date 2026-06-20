@@ -564,13 +564,15 @@ export default function App() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {/* BONUS CARD 1: Alfabeto em Libras Ilustrado */}
             <div className="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-              <div className="p-1.5 bg-slate-50 border-b border-slate-100 flex justify-center items-center overflow-hidden">
-                <img 
-                  src="https://i.ibb.co/MkTvcg9r/Chat-GPT-Image-20-de-jun-de-2026-15-33-13.png" 
-                  alt="Bonus 1 - Alfabeto em Libras Ilustrado" 
-                  className="h-48 sm:h-56 md:h-64 lg:h-72 w-full object-contain rounded-2xl transform group-hover:scale-[1.02] transition-transform duration-300"
-                  referrerPolicy="no-referrer"
-                />
+              <div className="p-5 bg-slate-50 border-b border-slate-100 flex justify-center items-center">
+                <div className="w-full h-52 sm:h-56 md:h-64 lg:h-72 p-3 bg-white rounded-[24px] border-4 border-slate-200 shadow-sm group-hover:border-rose-300 group-hover:shadow-md transition-all duration-300 flex justify-center items-center overflow-hidden">
+                  <img 
+                    src="https://i.ibb.co/MkTvcg9r/Chat-GPT-Image-20-de-jun-de-2026-15-33-13.png" 
+                    alt="Bonus 1 - Alfabeto em Libras Ilustrado" 
+                    className="h-full w-full object-contain rounded-xl transform group-hover:scale-[1.04] transition-transform duration-300"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
               </div>
               <div className="p-5 md:p-6 space-y-4 flex-1 flex flex-col justify-between">
                 <div className="space-y-3">
@@ -593,13 +595,15 @@ export default function App() {
 
             {/* BONUS CARD 2: Caça-Palavras em Libras */}
             <div className="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-              <div className="p-1.5 bg-slate-50 border-b border-slate-100 flex justify-center items-center overflow-hidden">
-                <img 
-                  src="https://i.ibb.co/Q3m9YBVM/Chat-GPT-Image-20-de-jun-de-2026-15-26-56.png" 
-                  alt="Bonus 2 - Caça-Palavras em Libras" 
-                  className="h-48 sm:h-56 md:h-64 lg:h-72 w-full object-contain rounded-2xl transform group-hover:scale-[1.02] transition-transform duration-300"
-                  referrerPolicy="no-referrer"
-                />
+              <div className="p-5 bg-slate-50 border-b border-slate-100 flex justify-center items-center">
+                <div className="w-full h-52 sm:h-56 md:h-64 lg:h-72 p-3 bg-white rounded-[24px] border-4 border-slate-200 shadow-sm group-hover:border-sky-300 group-hover:shadow-md transition-all duration-300 flex justify-center items-center overflow-hidden">
+                  <img 
+                    src="https://i.ibb.co/Q3m9YBVM/Chat-GPT-Image-20-de-jun-de-2026-15-26-56.png" 
+                    alt="Bonus 2 - Caça-Palavras em Libras" 
+                    className="h-full w-full object-contain rounded-xl transform group-hover:scale-[1.04] transition-transform duration-300"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
               </div>
               <div className="p-5 md:p-6 space-y-4 flex-1 flex flex-col justify-between">
                 <div className="space-y-3">
@@ -622,13 +626,15 @@ export default function App() {
 
             {/* BONUS CARD 3: Certificados de Amigo da Libras */}
             <div className="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-              <div className="p-1.5 bg-slate-50 border-b border-slate-100 flex justify-center items-center overflow-hidden">
-                <img 
-                  src="https://i.ibb.co/n836WCdJ/Chat-GPT-Image-20-de-jun-de-2026-15-36-32.png" 
-                  alt="Bonus 3 - Certificados de Incentivo" 
-                  className="h-48 sm:h-56 md:h-64 lg:h-72 w-full object-contain rounded-2xl transform group-hover:scale-[1.02] transition-transform duration-300"
-                  referrerPolicy="no-referrer"
-                />
+              <div className="p-5 bg-slate-50 border-b border-slate-100 flex justify-center items-center">
+                <div className="w-full h-52 sm:h-56 md:h-64 lg:h-72 p-3 bg-white rounded-[24px] border-4 border-slate-200 shadow-sm group-hover:border-emerald-300 group-hover:shadow-md transition-all duration-300 flex justify-center items-center overflow-hidden">
+                  <img 
+                    src="https://i.ibb.co/n836WCdJ/Chat-GPT-Image-20-de-jun-de-2026-15-36-32.png" 
+                    alt="Bonus 3 - Certificados de Incentivo" 
+                    className="h-full w-full object-contain rounded-xl transform group-hover:scale-[1.04] transition-transform duration-300"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
               </div>
               <div className="p-5 md:p-6 space-y-4 flex-1 flex flex-col justify-between">
                 <div className="space-y-3">
