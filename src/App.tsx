@@ -172,79 +172,55 @@ export default function App() {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="max-w-4xl mx-auto px-4 md:px-6 relative z-10">
+          <div className="text-center flex flex-col items-center">
             
-            {/* Hero Left Content */}
-            <div className="lg:col-span-7 space-y-6 text-center lg:text-left flex flex-col items-center lg:items-start">
+            {/* Hero Content */}
+            <div className="space-y-6 text-center flex flex-col items-center">
               {/* Highlight ribbon */}
-              <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-amber-100/60 border border-amber-200 text-amber-950 text-xs font-bold mx-auto lg:mx-0">
+              <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-amber-100/60 border border-amber-200 text-amber-950 text-xs font-bold mx-auto">
                 <Sparkles className="w-4 h-4 text-amber-600 fill-amber-500" />
                 Alfabeto Datilológico Completo em PDF
               </div>
 
-              <h2 className="text-3xl md:text-5xl font-extrabold text-sky-950 tracking-tight leading-tight lg:leading-none select-none">
+              <h2 className="text-3xl md:text-5xl font-extrabold text-sky-950 tracking-tight leading-tight select-none">
                 Atividades Prontas para Ensinar Libras de Forma <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-rose-600">Visual, Simples e Divertida</span>
               </h2>
 
-              <p className="text-lg font-semibold text-slate-800 leading-relaxed max-w-2xl">
+              <p className="text-lg font-semibold text-slate-800 leading-relaxed max-w-2xl mx-auto">
                 Um material pedagógico em PDF com atividades do alfabeto manual em Libras, pronto para imprimir e aplicar em sala de aula.
               </p>
 
-              <div className="p-4 bg-sky-50/70 border-l-4 border-blue-500 rounded-r-xl text-center lg:text-left w-full max-w-2xl">
+              <div className="w-full max-w-3xl mx-auto my-4">
+                <img 
+                  src="https://i.ibb.co/GQCT5C70/Chat-GPT-Image-20-de-jun-de-2026-15-07-29.png" 
+                  alt="Amostra das Atividades de Libras" 
+                  className="w-full h-auto select-none rounded-2xl"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+
+              <div className="p-4 bg-sky-50/70 border-b-4 lg:border-l-4 lg:border-b-0 border-blue-500 rounded-xl text-center w-full max-w-2xl mx-auto">
                 <p className="text-sm text-slate-700 font-medium">
                   Ideal para professores, pedagogas, profissionais do AEE e educadores que desejam trabalhar Libras com os alunos de maneira prática, organizada e visual.
                 </p>
               </div>
 
               {/* Call to action components */}
-              <div className="space-y-3 pt-2 w-full flex flex-col items-center lg:items-start">
+              <div className="space-y-4 pt-2 w-full flex flex-col items-center">
                 <button
                   onClick={scrollToPricing}
                   className="px-8 py-4.5 bg-rose-600 hover:bg-rose-700 text-white font-black text-base md:text-lg rounded-2xl shadow-xl hover:shadow-rose-300 hover:scale-101 transition-all flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto"
                 >
                   Quero acessar agora
                 </button>
-                <p className="text-xs text-slate-500 font-medium flex items-center gap-1.5 flex-wrap justify-center lg:justify-start">
+                <p className="text-xs text-slate-500 font-medium flex items-center gap-1.5 flex-wrap justify-center">
                   <span className="flex items-center gap-1"><Check className="w-3.5 h-3.5 text-emerald-500" /> Acesso imediato</span>
                   <span className="text-slate-300">•</span>
                   <span className="flex items-center gap-1"><Check className="w-3.5 h-3.5 text-emerald-500" /> Material em PDF</span>
                   <span className="text-slate-300">•</span>
                   <span className="flex items-center gap-1"><Check className="w-3.5 h-3.5 text-emerald-500" /> Pronto para imprimir</span>
                 </p>
-              </div>
-            </div>
-
-            {/* Hero Right Content (Mockup Visual) */}
-            <div className="lg:col-span-5 relative flex justify-center">
-              <div className="relative w-full max-w-md">
-                {/* Visual decorative backgrounds */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-sky-400 to-purple-400 rounded-3xl rotate-3 scale-102 opacity-20 blur-lg"></div>
-                
-                {/* Physical frame for the generated mockup */}
-                <div className="relative bg-white p-3 rounded-3xl shadow-2xl border-4 border-yellow-200 overflow-hidden transform hover:-rotate-1 transition-all duration-300">
-                  <img
-                    src={mockupUrl}
-                    alt="Mockup do Material de Atividades Prontas de Libras A4"
-                    referrerPolicy="no-referrer"
-                    className="w-full h-auto rounded-2xl object-cover"
-                  />
-                  {/* Badge */}
-                  <div className="absolute top-6 right-6 bg-red-600 text-white text-xs font-black px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1 transform rotate-6">
-                    <Flame className="w-3.5 h-3.5 text-yellow-300 animate-bounce" /> APENAS R$ 19,90
-                  </div>
-                </div>
-
-                {/* Smaller overlay card with printed sheets indicator */}
-                <div className="absolute -bottom-6 -left-6 bg-white p-3.5 rounded-2xl border-2 border-purple-100 shadow-xl max-w-xs hidden sm:flex items-center gap-3">
-                  <div className="p-2 bg-purple-100 rounded-lg text-purple-600">
-                    <Printer className="w-6 h-6" />
-                  </div>
-                  <div className="text-left">
-                    <p className="text-[10px] text-slate-400 uppercase tracking-widest font-extrabold">Formato Prático</p>
-                    <p className="text-xs font-black text-slate-800">Baixe no seu WhatsApp ou PC e imprima hoje mesmo.</p>
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -297,7 +273,7 @@ export default function App() {
             {PAIN_CARDS.map((card, i) => (
               <div 
                 key={card.id}
-                className="bg-white p-6 rounded-2xl border-t-4 border-t-rose-500 border-2 border-slate-100 shadow-sm text-left hover:shadow-md transition-all group hover:-translate-y-1 duration-200"
+                className="bg-white p-6 rounded-2xl border-t-4 border-t-rose-500 border-2 border-slate-100 shadow-sm text-center flex flex-col items-center hover:shadow-md transition-all group hover:-translate-y-1 duration-200"
               >
                 <div className="w-8 h-8 rounded-full bg-rose-50 text-rose-600 font-bold text-xs flex items-center justify-center mb-4 group-hover:bg-rose-500 group-hover:text-white transition-all">
                   {i + 1}
