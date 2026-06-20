@@ -64,6 +64,19 @@ const CAROUSEL_ROW_2 = [
   "https://i.ibb.co/1GSZWr9S/Chat-GPT-Image-20-de-jun-de-2026-15-11-41-9.png"
 ];
 
+const CAROUSEL_ROW_3 = [
+  "https://i.ibb.co/67B6THDP/Chat-GPT-Image-20-de-jun-de-2026-15-11-41-10.png",
+  "https://i.ibb.co/1GSZWr9S/Chat-GPT-Image-20-de-jun-de-2026-15-11-41-9.png",
+  "https://i.ibb.co/35J6cKhj/Chat-GPT-Image-20-de-jun-de-2026-15-11-40-8.png",
+  "https://i.ibb.co/R4NJ87Fc/Chat-GPT-Image-20-de-jun-de-2026-15-11-38-5.png",
+  "https://i.ibb.co/KcRQ0LzW/Chat-GPT-Image-20-de-jun-de-2026-15-11-39-6.png",
+  "https://i.ibb.co/gM97j0gN/Chat-GPT-Image-20-de-jun-de-2026-15-11-40-7.png",
+  "https://i.ibb.co/WWMGXbhB/Chat-GPT-Image-20-de-jun-de-2026-15-11-38-4.png",
+  "https://i.ibb.co/KzQQLsXJ/Chat-GPT-Image-20-de-jun-de-2026-15-11-37-3.png",
+  "https://i.ibb.co/B22d4SrZ/Chat-GPT-Image-20-de-jun-de-2026-15-11-36-2.png",
+  "https://i.ibb.co/DPkCLdTc/Chat-GPT-Image-20-de-jun-de-2026-15-11-36-1.png"
+];
+
 export default function App() {
   const [checkoutPrice, setCheckoutPrice] = useState<number>(37.90);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
@@ -407,15 +420,15 @@ export default function App() {
             </div>
 
             {/* Solution Right details */}
-            <div className="lg:col-span-7 space-y-6 text-left">
-              <span className="text-xs font-bold text-sky-600 uppercase tracking-widest flex items-center gap-1">
+            <div className="lg:col-span-7 space-y-6 text-center lg:text-left flex flex-col items-center lg:items-start">
+              <span className="text-xs font-bold text-sky-600 uppercase tracking-widest flex items-center gap-1 justify-center lg:justify-start">
                 <Award className="w-4 h-4 text-sky-500" /> Pedagogia Inclusiva Prática
               </span>
-              <h3 className="text-3xl md:text-4xl font-extrabold text-sky-950 tracking-tight leading-tight">
+              <h3 className="text-3xl md:text-4xl font-extrabold text-sky-950 tracking-tight leading-tight text-center lg:text-left">
                 Um kit pronto para facilitar suas aulas de Libras
               </h3>
               
-              <div className="space-y-4">
+              <div className="space-y-4 text-center lg:text-left">
                 <p className="text-base text-slate-600 leading-relaxed font-normal">
                   O material <strong>Atividades Prontas para Ensinar Libras</strong> foi criado para ajudar professores a trabalharem o alfabeto manual em Libras com atividades visuais, organizadas e prontas para impressão.
                 </p>
@@ -425,13 +438,13 @@ export default function App() {
               </div>
 
               {/* Benefits checklist */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 w-full text-center lg:text-left">
                 {BENEFITS.map((benefit) => (
-                  <div key={benefit.id} className="flex gap-3 text-left">
+                  <div key={benefit.id} className="flex flex-col items-center lg:items-start lg:flex-row gap-3">
                     <div className="p-1 bg-emerald-100 rounded-full text-emerald-600 shrink-0 h-fit">
                       <Check className="w-4 h-4" />
                     </div>
-                    <div>
+                    <div className="text-center lg:text-left">
                       <h4 className="text-xs font-extrabold text-slate-800 uppercase tracking-wider">{benefit.title}</h4>
                       <p className="text-xs text-slate-600 mt-0.5">{benefit.description}</p>
                     </div>
@@ -441,6 +454,25 @@ export default function App() {
 
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* SECOND CAROUSEL: SINGLE ROW (INFINITE) WITHOUT A TITLE */}
+      <section className="py-8 bg-white border-b border-sky-100 overflow-hidden relative select-none">
+        <div className="flex overflow-hidden py-2 relative">
+          <div className="overflow-hidden w-full relative">
+            <div className="animate-marquee-left gap-4 md:gap-6">
+              {[...CAROUSEL_ROW_3, ...CAROUSEL_ROW_3].map((src, index) => (
+                <img
+                  key={`row3-${index}`}
+                  src={src}
+                  alt="Mais Atividades de Libras"
+                  className="h-44 sm:h-56 md:h-64 lg:h-72 w-auto object-contain rounded-2xl shadow-md pointer-events-none hover:shadow-lg transition-shadow duration-300"
+                  referrerPolicy="no-referrer"
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
