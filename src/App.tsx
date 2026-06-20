@@ -542,6 +542,116 @@ export default function App() {
         </div>
       </section>
 
+      {/* SECTION: EXCLUSIVE BONUSES (BÔNUS EXCLUSIVOS) */}
+      <section className="py-20 bg-slate-100 border-b border-sky-100 relative overflow-hidden">
+        {/* Playful background detail */}
+        <div className="absolute top-10 left-10 w-48 h-48 bg-sky-200/40 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute bottom-10 right-10 w-64 h-64 bg-indigo-200/40 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div className="max-w-6xl mx-auto px-4 md:px-6 relative z-10">
+          <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
+            <span className="text-xs font-black text-rose-600 uppercase tracking-widest bg-rose-50 border border-rose-100 py-1.5 px-4 rounded-full inline-flex items-center gap-1.5 shadow-sm">
+              <Sparkles className="w-3.5 h-3.5 fill-rose-500 text-rose-500 animate-pulse" /> Presentes Especiais Para Você
+            </span>
+            <h3 className="text-3xl md:text-4xl font-extrabold text-sky-950 tracking-tight leading-tight">
+              Bônus Exclusivos Inteiramente Gratuitos
+            </h3>
+            <p className="text-sm text-slate-600">
+              Garantindo sua cópia do material principal hoje, você também recebe acesso imediato a estes três complementos lúdicos imperdíveis:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {/* BONUS CARD 1: Alfabeto em Libras Ilustrado */}
+            <div className="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+              <div className="p-1.5 bg-slate-50 border-b border-slate-100 flex justify-center items-center overflow-hidden">
+                <img 
+                  src="https://i.ibb.co/MkTvcg9r/Chat-GPT-Image-20-de-jun-de-2026-15-33-13.png" 
+                  alt="Bonus 1 - Alfabeto em Libras Ilustrado" 
+                  className="h-48 sm:h-56 md:h-64 lg:h-72 w-full object-contain rounded-2xl transform group-hover:scale-[1.02] transition-transform duration-300"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div className="p-5 md:p-6 space-y-4 flex-1 flex flex-col justify-between">
+                <div className="space-y-3">
+                  <span className="text-[10px] font-extrabold text-white bg-gradient-to-r from-rose-500 to-amber-500 px-3 py-1 rounded-full uppercase tracking-wider inline-block">
+                    SUPER BÔNUS 1 • GRÁTIS
+                  </span>
+                  <h4 className="text-base md:text-lg font-extrabold text-sky-950 leading-tight">
+                    Alfabeto em Libras Ilustrado
+                  </h4>
+                  <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                    Um caderno visual exclusivo contendo as letras de A a Z ilustradas de forma lúdica e estimulante. Cada sinal em Libras vem acompanhado de um objeto associado e colorido para facilitar a retenção cognitiva da criança de maneira divertida. Perfeito para preencher murais da sala, preparar flashcards interativos de mesa ou fixação complementar!
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
+                  <span className="flex items-center gap-1 font-bold text-rose-500"><Check className="w-4 h-4" /> Incluso no PDF</span>
+                  <span className="font-mono text-[10px] bg-slate-100 px-2 py-0.5 rounded">Formato A4</span>
+                </div>
+              </div>
+            </div>
+
+            {/* BONUS CARD 2: Caça-Palavras em Libras */}
+            <div className="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+              <div className="p-1.5 bg-slate-50 border-b border-slate-100 flex justify-center items-center overflow-hidden">
+                <img 
+                  src="https://i.ibb.co/Q3m9YBVM/Chat-GPT-Image-20-de-jun-de-2026-15-26-56.png" 
+                  alt="Bonus 2 - Caça-Palavras em Libras" 
+                  className="h-48 sm:h-56 md:h-64 lg:h-72 w-full object-contain rounded-2xl transform group-hover:scale-[1.02] transition-transform duration-300"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div className="p-5 md:p-6 space-y-4 flex-1 flex flex-col justify-between">
+                <div className="space-y-3">
+                  <span className="text-[10px] font-extrabold text-white bg-gradient-to-r from-sky-500 to-indigo-500 px-3 py-1 rounded-full uppercase tracking-wider inline-block">
+                    SUPER BÔNUS 2 • GRÁTIS
+                  </span>
+                  <h4 className="text-base md:text-lg font-extrabold text-sky-950 leading-tight">
+                    Caça-Palavras Lúdico em Libras
+                  </h4>
+                  <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                    Fascinantes jogos de caça-palavras focados em desenvolver a percepção espacial, decodificação ágil do alfabeto manual e fixação de vocabulário básico. Uma dinâmica fantástica para preencher o fim das aulas, aplicar como tarefa de casa alegre, ou desafiar a memória de forma prazerosa sem as pressões de testes tradicionais.
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
+                  <span className="flex items-center gap-1 font-bold text-sky-500"><Check className="w-4 h-4" /> Incluso no PDF</span>
+                  <span className="font-mono text-[10px] bg-slate-100 px-2 py-0.5 rounded">Pronto p/ Imprimir</span>
+                </div>
+              </div>
+            </div>
+
+            {/* BONUS CARD 3: Certificados de Amigo da Libras */}
+            <div className="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+              <div className="p-1.5 bg-slate-50 border-b border-slate-100 flex justify-center items-center overflow-hidden">
+                <img 
+                  src="https://i.ibb.co/n836WCdJ/Chat-GPT-Image-20-de-jun-de-2026-15-36-32.png" 
+                  alt="Bonus 3 - Certificados de Incentivo" 
+                  className="h-48 sm:h-56 md:h-64 lg:h-72 w-full object-contain rounded-2xl transform group-hover:scale-[1.02] transition-transform duration-300"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div className="p-5 md:p-6 space-y-4 flex-1 flex flex-col justify-between">
+                <div className="space-y-3">
+                  <span className="text-[10px] font-extrabold text-white bg-gradient-to-r from-emerald-500 to-teal-500 px-3 py-1 rounded-full uppercase tracking-wider inline-block">
+                    SUPER BÔNUS 3 • GRÁTIS
+                  </span>
+                  <h4 className="text-base md:text-lg font-extrabold text-sky-950 leading-tight">
+                    Certificados de Incentivo & Progresso
+                  </h4>
+                  <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                    Lindo conjunto de certificados coloridos e colecionáveis prontos para preencher e premiar as crianças pelo aprendizado e domínio do alfabeto manual em Libras! Uma maravilhosa ferramenta pedagógica para gerar orgulho, elevar o senso de conquista mútua de forma afetuosa e motivar os alunos a continuarem se dedicando.
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
+                  <span className="flex items-center gap-1 font-bold text-emerald-600"><Check className="w-4 h-4" /> Incluso no PDF</span>
+                  <span className="font-mono text-[10px] bg-slate-100 px-2 py-0.5 rounded">Preenchível</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SECTION 5: CARD DE OFERTA (PRICING & OFFERS) */}
       <section id="pricing" className="py-20 bg-gradient-to-br from-indigo-950 via-sky-950 to-emerald-950 text-white relative overflow-hidden">
         
@@ -605,12 +715,14 @@ export default function App() {
                   <span className="text-[9px] text-slate-400 font-bold uppercase tracking-wider block mt-1">Acesso único sem mensalidades</span>
                 </div>
 
-                <button
-                  onClick={() => openCheckout(27.90)}
-                  className="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm py-3 px-6 rounded-2xl shadow-lg transition-all flex items-center justify-center gap-1.5 cursor-pointer leading-none"
+                <a
+                  href="https://pay.wiapy.com/RUEhLkqCro"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm py-3 px-6 rounded-2xl shadow-lg transition-all flex items-center justify-center gap-1.5 cursor-pointer leading-none text-center"
                 >
                   Quero o Kit Essencial
-                </button>
+                </a>
               </div>
             </div>
 
@@ -671,12 +783,14 @@ export default function App() {
                   <span className="text-[9px] text-amber-600 font-bold uppercase tracking-wider block mt-1">Melhor Custo-Benefício 💎</span>
                 </div>
 
-                <button
-                  onClick={() => openCheckout(37.90)}
-                  className="w-full bg-rose-600 hover:bg-rose-700 text-white font-black text-sm py-3 px-6 rounded-2xl shadow-xl hover:shadow-rose-100 transition-all flex items-center justify-center gap-1.5 cursor-pointer leading-none"
+                <a
+                  href="https://pay.wiapy.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-rose-600 hover:bg-rose-700 text-white font-black text-sm py-3 px-6 rounded-2xl shadow-xl hover:shadow-rose-100 transition-all flex items-center justify-center gap-1.5 cursor-pointer leading-none text-center"
                 >
                   Quero o Kit Premium Completo
-                </button>
+                </a>
               </div>
             </div>
 
@@ -911,10 +1025,6 @@ export default function App() {
 
           {/* Social Warning & Responsible usage notices */}
           <div className="pt-8 border-t border-sky-900 text-left space-y-4">
-            <div className="p-4 bg-sky-900/40 rounded-2xl border border-sky-900 text-[11px] text-slate-300 leading-relaxed max-w-4xl font-normal">
-              <strong>Aviso Importante:</strong> Este material é uma ferramenta lúdica e de apoio auxiliar focado em exercícios do alfabeto datilológico (manual). Ele serve como recurso pedagógico suplementar e não substitui um curso formal específico de formação em Libras ou acompanhamento de um profissional de fonoaudiologia ou educação inclusiva especializada.
-            </div>
-
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] text-slate-400 pt-2">
               <p>&copy; 2026 Atividades Prontas LIBRAS. Todos os direitos reservados.</p>
               <p className="flex items-center gap-1">Feito com <Heart className="w-3 h-3 text-rose-500 fill-rose-500" /> para apoiar a educação inclusiva nacional.</p>
