@@ -1,0 +1,6 @@
+{
+  "name": "Atividades Libras PDF",
+  "description": "Página de vendas profissional para atividades práticas e prontas para ensinar Libras, formato PDF para imprimir.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
