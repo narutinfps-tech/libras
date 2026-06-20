@@ -28,7 +28,4 @@
   animation: marqueeRight 38s linear infinite;
 }
 
-.animate-marquee-left:hover, .animate-marquee-right:hover {
-  animation-play-state: paused;
-}
 

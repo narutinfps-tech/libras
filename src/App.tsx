@@ -784,7 +784,7 @@ export default function App() {
                 </div>
 
                 <a
-                  href="https://pay.wiapy.com/"
+                  href="https://pay.wiapy.com/Kj4avUG-11"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full bg-rose-600 hover:bg-rose-700 text-white font-black text-sm py-3 px-6 rounded-2xl shadow-xl hover:shadow-rose-100 transition-all flex items-center justify-center gap-1.5 cursor-pointer leading-none text-center"
