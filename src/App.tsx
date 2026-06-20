@@ -45,6 +45,25 @@ const PURCHASE_NOTIFICATIONS: NotificationItem[] = [
   { id: 9, message: "Gisela O. (Florianópolis)", sub: "Baixou o material e amou a didática! ❤️", time: "há 6 min" }
 ];
 
+const CAROUSEL_ROW_1 = [
+  "https://i.ibb.co/RTmdq25z/Chat-GPT-Image-20-de-jun-de-2026-15-11-48-9.png",
+  "https://i.ibb.co/cj2MbFn/Chat-GPT-Image-20-de-jun-de-2026-15-11-47-7.png",
+  "https://i.ibb.co/PsJQSj8t/Chat-GPT-Image-20-de-jun-de-2026-15-11-45-5.png",
+  "https://i.ibb.co/5X3zJv1L/Chat-GPT-Image-20-de-jun-de-2026-15-11-45-4.png",
+  "https://i.ibb.co/XfPP33fN/Chat-GPT-Image-20-de-jun-de-2026-15-11-44-3.png",
+  "https://i.ibb.co/67B6THDP/Chat-GPT-Image-20-de-jun-de-2026-15-11-41-10.png",
+  "https://i.ibb.co/35J6cKhj/Chat-GPT-Image-20-de-jun-de-2026-15-11-40-8.png"
+];
+
+const CAROUSEL_ROW_2 = [
+  "https://i.ibb.co/r2PtcFDc/Chat-GPT-Image-20-de-jun-de-2026-15-11-48-10.png",
+  "https://i.ibb.co/MkhktJwN/Chat-GPT-Image-20-de-jun-de-2026-15-11-47-8.png",
+  "https://i.ibb.co/Cs1WmMvN/Chat-GPT-Image-20-de-jun-de-2026-15-11-46-6.png",
+  "https://i.ibb.co/q3XbqT3r/Chat-GPT-Image-20-de-jun-de-2026-15-11-44-2.png",
+  "https://i.ibb.co/S7c41TL9/Chat-GPT-Image-20-de-jun-de-2026-15-11-44-1.png",
+  "https://i.ibb.co/1GSZWr9S/Chat-GPT-Image-20-de-jun-de-2026-15-11-41-9.png"
+];
+
 export default function App() {
   const [checkoutPrice, setCheckoutPrice] = useState<number>(37.90);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
@@ -227,6 +246,54 @@ export default function App() {
           </div>
         </div>
       </header>
+
+      {/* INFINITE CAROUSEL SECTION */}
+      <section id="preview-samples-carousel" className="py-12 bg-white border-b border-sky-100 overflow-hidden relative">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 mb-8 text-center">
+          <span className="text-xs font-bold text-blue-600 uppercase tracking-widest flex items-center justify-center gap-1 mb-2">
+            <BookOpen className="w-4 h-4 text-blue-500" /> Material por Dentro
+          </span>
+          <h3 id="carousel-title" className="text-2xl md:text-3xl font-extrabold text-sky-950 tracking-tight">
+            Veja uma Amostra das Nossas Atividades
+          </h3>
+          <p id="carousel-subtitle" className="text-sm text-slate-500 mt-2 max-w-2xl mx-auto">
+            Mais de 100 páginas ilustradas com o alfabeto manual em Libras, prontas para imprimir e trabalhar de forma super divertida!
+          </p>
+        </div>
+
+        {/* Carousel Tracks */}
+        <div className="flex flex-col gap-6 md:gap-8 overflow-hidden py-2 relative select-none">
+          {/* Track 1: Moving Left */}
+          <div className="overflow-hidden w-full relative">
+            <div className="animate-marquee-left gap-4 md:gap-6">
+              {[...CAROUSEL_ROW_1, ...CAROUSEL_ROW_1].map((src, index) => (
+                <img
+                  key={`row1-${index}`}
+                  src={src}
+                  alt="Atividade Pedagógica de Libras"
+                  className="h-44 sm:h-56 md:h-64 lg:h-72 w-auto object-contain rounded-2xl shadow-md pointer-events-none hover:shadow-lg transition-shadow duration-300"
+                  referrerPolicy="no-referrer"
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Track 2: Moving Right */}
+          <div className="overflow-hidden w-full relative">
+            <div className="animate-marquee-right gap-4 md:gap-6">
+              {[...CAROUSEL_ROW_2, ...CAROUSEL_ROW_2].map((src, index) => (
+                <img
+                  key={`row2-${index}`}
+                  src={src}
+                  alt="Atividade Pedagógica de Libras"
+                  className="h-44 sm:h-56 md:h-64 lg:h-72 w-auto object-contain rounded-2xl shadow-md pointer-events-none hover:shadow-lg transition-shadow duration-300"
+                  referrerPolicy="no-referrer"
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* SECTION 2: DORES (PAIN POINTS) */}
       <section className="py-16 md:py-24 bg-slate-50 relative overflow-hidden">
