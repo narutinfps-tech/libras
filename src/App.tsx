@@ -744,7 +744,7 @@ export default function App() {
                     <img 
                       src="https://i.ibb.co/0b4pRCJ/Chat-GPT-Image-20-de-jun-de-2026-16-52-06.png" 
                       alt="Icone Premium" 
-                      className="h-24 w-24 object-contain mb-3"
+                      className="h-36 w-36 md:h-40 md:w-40 object-contain mb-3"
                       referrerPolicy="no-referrer"
                     />
                     <h4 className="text-xl font-bold text-sky-950">Kit Premium Completo</h4>
