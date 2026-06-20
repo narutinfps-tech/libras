@@ -139,34 +139,15 @@ export default function App() {
         </AnimatePresence>
       </div>
 
-      {/* Decorative Top School Ribbon */}
-      <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-amber-500 h-2.5 w-full"></div>
+      {/* Decorative Top School Ribbon with Urgency Banner */}
+      <div className="bg-gradient-to-r from-rose-600 via-purple-600 to-blue-600 text-white py-2.5 px-4 text-center text-[11px] sm:text-xs font-black tracking-wide relative z-50 flex items-center justify-center gap-1.5 sm:gap-2 flex-wrap shadow-sm">
+        <span className="bg-white text-rose-700 text-[9px] px-2 py-0.5 rounded-full uppercase font-black tracking-widest leading-none shrink-0 animate-pulse">
+          ATENÇÃO
+        </span>
+        <span>PROMOÇÃO ATIVA: Garanta seu kit pedagógico com desconto antes da virada de lote! ⏳</span>
+      </div>
 
-      {/* Floating Action Bar (Conversion Booster!) */}
-      <AnimatePresence>
-        {scrolledPastHero && (
-          <motion.div 
-            initial={{ y: 80, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 80, opacity: 0 }}
-            className="fixed bottom-6 inset-x-4 md:inset-x-auto md:right-8 z-40 max-w-sm md:w-85"
-          >
-            <div className="bg-white/95 backdrop-blur-md rounded-2xl border-2 border-amber-300 p-4 shadow-2xl flex items-center justify-between gap-4">
-              <div className="text-left">
-                <span className="text-[11px] font-black text-slate-500 uppercase tracking-widest block">Oferta Especial</span>
-                <span className="text-base font-black text-rose-600">A partir de R$ 27,90</span>
-                <span className="text-[10px] text-gray-400 block">Completo & Pronto</span>
-              </div>
-              <button 
-                onClick={scrollToPricing}
-                className="py-2.5 px-4 bg-rose-600 hover:bg-rose-700 text-white font-bold rounded-xl text-xs md:text-sm tracking-wide shadow-md transition-all flex items-center gap-1 cursor-pointer animate-pulse"
-              >
-                Ver Planos <ArrowRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+
 
       {/* SECTION 1: HERO */}
       <header className="relative bg-white pt-6 pb-16 md:py-24 overflow-hidden border-b border-sky-100">
