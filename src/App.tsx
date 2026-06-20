@@ -240,7 +240,7 @@ export default function App() {
                   referrerPolicy="no-referrer"
                   decoding="async"
                   // @ts-ignore
-                  fetchpriority="high"
+                  fetchPriority="high"
                 />
               </div>
 
