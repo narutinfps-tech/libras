@@ -750,9 +750,9 @@ export default function App() {
                     <div className="space-y-2 text-xs">
                       {[
                         "Todo o Caderno Completo A-Z Essencial",
-                        "BÔNUS 1: Cartões de Bolso do Alfabeto para recortar",
-                        "BÔNUS 2: Poster Digital Gigante do Alfabeto datilológico",
-                        "BÔNUS 3: Caderno Extra de Fichas de Sinais do dia a dia",
+                        "BÔNUS 1: Alfabeto em Libras Ilustrado",
+                        "BÔNUS 2: Caça-Palavras Lúdico em Libras",
+                        "BÔNUS 3: Certificados de Incentivo & Progresso",
                         "Acesso vitalício e download ilimitado para impressão",
                         "Garantia de Satisfação de 7 dias ou seu dinheiro de volta",
                         "Suporte prioritário via WhatsApp"
