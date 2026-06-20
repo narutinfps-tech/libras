@@ -52,16 +52,43 @@ export function CheckoutModal({ isOpen, onClose, price }: CheckoutModalProps) {
       if (validateStep1()) {
         setStep(2);
         setErrors({});
+
+        // Disparar evento de Pixel do Facebook (AddPaymentInfo)
+        if (typeof window !== "undefined" && (window as any).fbq) {
+          (window as any).fbq('track', 'AddPaymentInfo', {
+            value: price,
+            currency: 'BRL',
+            content_name: 'Kit Atividades Libras'
+          });
+        }
       }
     } else if (step === 2) {
       if (paymentMethod === "card") {
         if (validateStep2Card()) {
           setStep(3); // Success page
           setErrors({});
+
+          // Disparar evento de Pixel do Facebook (Purchase)
+          if (typeof window !== "undefined" && (window as any).fbq) {
+            (window as any).fbq('track', 'Purchase', {
+              value: price,
+              currency: 'BRL',
+              content_name: 'Kit Atividades Libras'
+            });
+          }
         }
       } else {
         // Pix simulation
         setStep(3); // Direct access
+
+        // Disparar evento de Pixel do Facebook (Purchase) Simulado no Pix
+        if (typeof window !== "undefined" && (window as any).fbq) {
+          (window as any).fbq('track', 'Purchase', {
+            value: price,
+            currency: 'BRL',
+            content_name: 'Kit Atividades Libras'
+          });
+        }
       }
     }
   };

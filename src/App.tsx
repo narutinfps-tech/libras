@@ -128,6 +128,15 @@ export default function App() {
   const openCheckout = (price: number = 37.90) => {
     setCheckoutPrice(price);
     setIsCheckoutOpen(true);
+    // Disparar evento de Pixel do Facebook (InitiateCheckout)
+    if (typeof window !== "undefined" && (window as any).fbq) {
+      (window as any).fbq('track', 'InitiateCheckout', {
+        value: price,
+        currency: 'BRL',
+        content_name: 'Kit Atividades Libras',
+        content_category: 'Educacional'
+      });
+    }
   };
 
   const scrollToPricing = () => {
@@ -223,12 +232,15 @@ export default function App() {
                 Um material pedagógico em PDF com atividades do alfabeto manual em Libras, pronto para imprimir e aplicar em sala de aula.
               </p>
 
-              <div className="w-full max-w-3xl mx-auto my-4">
+              <div className="w-full max-w-3xl mx-auto my-4 hover:shadow-xl transition-shadow duration-300 rounded-2xl overflow-hidden">
                 <img 
                   src="https://i.ibb.co/GQCT5C70/Chat-GPT-Image-20-de-jun-de-2026-15-07-29.png" 
                   alt="Amostra das Atividades de Libras" 
                   className="w-full h-auto select-none rounded-2xl"
                   referrerPolicy="no-referrer"
+                  decoding="async"
+                  // @ts-ignore
+                  fetchpriority="high"
                 />
               </div>
 
@@ -284,8 +296,10 @@ export default function App() {
                   key={`row1-${index}`}
                   src={src}
                   alt="Atividade Pedagógica de Libras"
-                  className="h-44 sm:h-56 md:h-64 lg:h-72 w-auto object-contain rounded-2xl shadow-md pointer-events-none hover:shadow-lg transition-shadow duration-300"
+                  className="h-44 sm:h-56 md:h-64 lg:h-72 w-auto object-contain rounded-2xl shadow-md pointer-events-none hover:shadow-lg transition-all duration-300 transform-gpu"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
                 />
               ))}
             </div>
@@ -299,8 +313,10 @@ export default function App() {
                   key={`row2-${index}`}
                   src={src}
                   alt="Atividade Pedagógica de Libras"
-                  className="h-44 sm:h-56 md:h-64 lg:h-72 w-auto object-contain rounded-2xl shadow-md pointer-events-none hover:shadow-lg transition-shadow duration-300"
+                  className="h-44 sm:h-56 md:h-64 lg:h-72 w-auto object-contain rounded-2xl shadow-md pointer-events-none hover:shadow-lg transition-all duration-300 transform-gpu"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
                 />
               ))}
             </div>
@@ -468,8 +484,10 @@ export default function App() {
                   key={`row3-${index}`}
                   src={src}
                   alt="Mais Atividades de Libras"
-                  className="h-44 sm:h-56 md:h-64 lg:h-72 w-auto object-contain rounded-2xl shadow-md pointer-events-none hover:shadow-lg transition-shadow duration-300"
+                  className="h-44 sm:h-56 md:h-64 lg:h-72 w-auto object-contain rounded-2xl shadow-md pointer-events-none hover:shadow-lg transition-all duration-300 transform-gpu"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
                 />
               ))}
             </div>
@@ -570,6 +588,8 @@ export default function App() {
                   alt="Bonus 1 - Alfabeto em Libras Ilustrado" 
                   className="h-52 sm:h-56 md:h-64 lg:h-72 w-full object-contain rounded-[24px] transform group-hover:scale-[1.04] transition-transform duration-300"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="p-5 md:p-6 space-y-4 flex-1 flex flex-col justify-between">
@@ -599,6 +619,8 @@ export default function App() {
                   alt="Bonus 2 - Caça-Palavras em Libras" 
                   className="h-52 sm:h-56 md:h-64 lg:h-72 w-full object-contain rounded-[24px] transform group-hover:scale-[1.04] transition-transform duration-300"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="p-5 md:p-6 space-y-4 flex-1 flex flex-col justify-between">
@@ -628,6 +650,8 @@ export default function App() {
                   alt="Bonus 3 - Certificados de Incentivo" 
                   className="h-52 sm:h-56 md:h-64 lg:h-72 w-full object-contain rounded-[24px] transform group-hover:scale-[1.04] transition-transform duration-300"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="p-5 md:p-6 space-y-4 flex-1 flex flex-col justify-between">
@@ -746,6 +770,8 @@ export default function App() {
                       alt="Icone Premium" 
                       className="h-36 w-36 md:h-40 md:w-40 object-contain mb-3"
                       referrerPolicy="no-referrer"
+                      loading="lazy"
+                      decoding="async"
                     />
                     <h4 className="text-xl font-bold text-sky-950">Kit Premium Completo</h4>
                     <p className="text-xs text-slate-500 mt-1 font-medium">A experiência definitiva com suporte e material bônus.</p>
@@ -871,6 +897,8 @@ export default function App() {
                 alt="Garantia de 7 Dias" 
                 className="w-full h-full object-contain mix-blend-multiply select-none"
                 referrerPolicy="no-referrer"
+                loading="lazy"
+                decoding="async"
               />
             </div>
 
