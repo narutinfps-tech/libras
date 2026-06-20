@@ -740,7 +740,13 @@ export default function App() {
                 </div>
                 
                 <div className="p-6 md:p-8 space-y-6">
-                  <div className="text-center">
+                  <div className="text-center flex flex-col items-center justify-center">
+                    <img 
+                      src="https://i.ibb.co/0b4pRCJ/Chat-GPT-Image-20-de-jun-de-2026-16-52-06.png" 
+                      alt="Icone Premium" 
+                      className="h-24 w-24 object-contain mb-3"
+                      referrerPolicy="no-referrer"
+                    />
                     <h4 className="text-xl font-bold text-sky-950">Kit Premium Completo</h4>
                     <p className="text-xs text-slate-500 mt-1 font-medium">A experiência definitiva com suporte e material bônus.</p>
                   </div>
@@ -853,7 +859,7 @@ export default function App() {
       {/* SECTION 7: GARANTIA (7-DAY GUARANTEE) */}
       <section className="py-16 bg-slate-50 relative border-t border-b border-sky-100">
         <div className="max-w-4xl mx-auto px-4 md:px-6">
-          <div className="bg-white rounded-3xl p-6 md:p-10 border-2 border-slate-100 shadow-xl flex flex-col md:flex-row items-center gap-8 md:gap-12 text-left relative overflow-hidden">
+          <div className="bg-white rounded-3xl p-6 md:p-10 border-2 border-slate-100 shadow-xl flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 text-center md:text-left relative overflow-hidden">
             
             {/* Visual dynamic ribbon filter */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-amber-100 rounded-bl-full opacity-20 pointer-events-none"></div>
@@ -868,11 +874,13 @@ export default function App() {
               />
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-4 flex flex-col items-center md:items-start">
               <span className="bg-emerald-100 text-emerald-800 font-bold text-[10px] uppercase tracking-wider px-3 py-1 rounded-full inline-block">
                 COMPRA 100% SEGURA E RESPONSÁVEL
               </span>
-              <h3 className="text-2xl font-black text-sky-950">Garantia Incondicional de 7 dias</h3>
+              <h3 className="text-xl sm:text-2xl font-black text-sky-950 tracking-tight leading-snug">
+                Garantia Incondicional <span className="block sm:inline text-rose-600 whitespace-nowrap">de 7 dias</span>
+              </h3>
               <p className="text-sm text-slate-600 leading-relaxed font-normal">
                 Você pode acessar o material, conferir as páginas e ver se ele faz sentido para sua rotina. Caso não fique satisfeito, é possível solicitar o reembolso dentro do prazo de garantia de 7 dias.
               </p>
