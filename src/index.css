@@ -19,7 +19,7 @@
 .animate-marquee-left {
   display: flex;
   width: max-content;
-  animation: marqueeLeft 10s linear infinite;
+  animation: marqueeLeft 35s linear infinite;
   will-change: transform;
   backface-visibility: hidden;
   transform: translate3d(0,0,0);
@@ -28,7 +28,7 @@
 .animate-marquee-right {
   display: flex;
   width: max-content;
-  animation: marqueeRight 10s linear infinite;
+  animation: marqueeRight 35s linear infinite;
   will-change: transform;
   backface-visibility: hidden;
   transform: translate3d(0,0,0);

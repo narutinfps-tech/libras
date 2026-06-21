@@ -86,14 +86,21 @@ export default function App() {
 
   // Monitor scroll state for floating badge
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      if (window.scrollY > 550) {
-        setScrolledPastHero(true);
-      } else {
-        setScrolledPastHero(false);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (window.scrollY > 550) {
+            setScrolledPastHero(true);
+          } else {
+            setScrolledPastHero(false);
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -296,7 +303,7 @@ export default function App() {
                   key={`row1-${index}`}
                   src={src}
                   alt="Atividade Pedagógica de Libras"
-                  className="h-44 sm:h-56 md:h-64 lg:h-72 w-auto object-contain rounded-2xl shadow-md pointer-events-none hover:shadow-lg transition-all duration-300 transform-gpu"
+                  className="h-44 sm:h-56 md:h-64 lg:h-72 w-auto object-contain rounded-2xl shadow-md pointer-events-none hover:shadow-lg transition-shadow duration-300 transform-gpu"
                   referrerPolicy="no-referrer"
                   loading="lazy"
                   decoding="async"
@@ -313,7 +320,7 @@ export default function App() {
                   key={`row2-${index}`}
                   src={src}
                   alt="Atividade Pedagógica de Libras"
-                  className="h-44 sm:h-56 md:h-64 lg:h-72 w-auto object-contain rounded-2xl shadow-md pointer-events-none hover:shadow-lg transition-all duration-300 transform-gpu"
+                  className="h-44 sm:h-56 md:h-64 lg:h-72 w-auto object-contain rounded-2xl shadow-md pointer-events-none hover:shadow-lg transition-shadow duration-300 transform-gpu"
                   referrerPolicy="no-referrer"
                   loading="lazy"
                   decoding="async"
@@ -484,7 +491,7 @@ export default function App() {
                   key={`row3-${index}`}
                   src={src}
                   alt="Mais Atividades de Libras"
-                  className="h-44 sm:h-56 md:h-64 lg:h-72 w-auto object-contain rounded-2xl shadow-md pointer-events-none hover:shadow-lg transition-all duration-300 transform-gpu"
+                  className="h-44 sm:h-56 md:h-64 lg:h-72 w-auto object-contain rounded-2xl shadow-md pointer-events-none hover:shadow-lg transition-shadow duration-300 transform-gpu"
                   referrerPolicy="no-referrer"
                   loading="lazy"
                   decoding="async"
@@ -496,61 +503,139 @@ export default function App() {
       </section>
 
       {/* SECTION 4: O QUE VEM NO MATERIAL (WHAT IS INCLUDED) */}
-      <section className="py-16 md:py-24 bg-slate-50 relative">
-        <div className="max-w-6xl mx-auto px-4 md:px-6">
+      <section className="py-20 md:py-28 bg-gradient-to-b from-slate-50 via-sky-50/20 to-slate-50 relative overflow-hidden">
+        {/* Playful background blobs */}
+        <div className="absolute top-1/3 left-[-100px] w-80 h-80 bg-blue-200/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-1/4 right-[-100px] w-96 h-96 bg-purple-200/20 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-6xl mx-auto px-4 md:px-6 relative z-10">
           
-          <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-            <span className="text-xs font-bold text-sky-600 uppercase tracking-widest bg-white py-1 px-3.5 rounded-full shadow-sm inline-block">
-              Por Dentro do Kit Pedagógico
+          <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20 space-y-4">
+            <span className="text-xs font-black text-blue-600 uppercase tracking-widest bg-blue-50 border border-blue-100 py-2 px-5 rounded-full inline-flex items-center gap-2 shadow-xs bg-blue-50">
+              <BookOpen className="w-4 h-4 text-blue-500 fill-blue-500/20" /> CONTEÚDO ATUALIZADO & COMPLETO
             </span>
-            <h3 className="text-2xl md:text-4xl font-extrabold text-sky-950 tracking-tight">
-              O que você vai receber ao garantir sua cópia hoje
+            <h3 className="text-3xl md:text-5xl font-black text-sky-950 tracking-tight leading-none animate-fade-in">
+              Por Dentro do <span className="text-blue-500 bg-blue-50 px-2 py-0.5 rounded-lg border border-blue-100">Kit Pedagógico de Libras</span>
             </h3>
-            <p className="text-sm text-slate-500">
-              Cada seção do PDF foi planejada obedecendo uma ordem pedagógica de retenção e assimilação cognitiva.
+            <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto font-medium">
+              Cada seção do caderno PDF foi milimetricamente planejada obedecendo uma ordem didática comprovada para retenção e assimilação rápida de sinais manuais pelas crianças!
             </p>
           </div>
 
           {/* Grid layout for blocks of content */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {MATERIAL_BLOCKS.map((block, i) => {
-              // Custom pastel colors to create colorful playful design
-              const colors = [
-                "border-sky-200 bg-sky-50 text-sky-900 group-hover:bg-sky-600",
-                "border-purple-200 bg-purple-50 text-purple-900 group-hover:bg-purple-600",
-                "border-emerald-200 bg-emerald-50 text-emerald-900 group-hover:bg-emerald-600",
-                "border-amber-200 bg-amber-50 text-amber-900 group-hover:bg-amber-600",
-                "border-rose-200 bg-rose-50 text-rose-900 group-hover:bg-rose-600",
-                "border-indigo-200 bg-indigo-50 text-indigo-900 group-hover:bg-indigo-600",
+              // Custom vibrant themes for each corresponding card
+              const themes = [
+                {
+                  gradient: "from-sky-50 to-white hover:from-sky-100/40",
+                  border: "border-sky-100 hover:border-sky-300",
+                  accent: "bg-sky-500",
+                  accentText: "text-sky-600",
+                  iconBg: "bg-sky-50 text-sky-600 border-sky-100",
+                  badge: "bg-sky-50 text-sky-700 border-sky-100",
+                  icon: BookOpen,
+                  spec: "Páginas Ilustradas"
+                },
+                {
+                  gradient: "from-purple-50 to-white hover:from-purple-100/40",
+                  border: "border-purple-100 hover:border-purple-300",
+                  accent: "bg-purple-500",
+                  accentText: "text-purple-600",
+                  iconBg: "bg-purple-50 text-purple-600 border-purple-100",
+                  badge: "bg-purple-50 text-purple-700 border-purple-100",
+                  icon: Sparkles,
+                  spec: "Associação Lúdica Visual"
+                },
+                {
+                  gradient: "from-emerald-50 to-white hover:from-emerald-100/40",
+                  border: "border-emerald-100 hover:border-emerald-300",
+                  accent: "bg-emerald-500",
+                  accentText: "text-emerald-600",
+                  iconBg: "bg-emerald-50 text-emerald-600 border-emerald-100",
+                  badge: "bg-emerald-50 text-emerald-700 border-emerald-100",
+                  icon: CheckCircle2,
+                  spec: "Atividades de Escolha"
+                },
+                {
+                  gradient: "from-amber-50 to-white hover:from-amber-100/40",
+                  border: "border-amber-100 hover:border-amber-300",
+                  accent: "bg-amber-500",
+                  accentText: "text-amber-600",
+                  iconBg: "bg-amber-50 text-amber-600 border-amber-100",
+                  badge: "bg-amber-50 text-amber-700 border-amber-100",
+                  icon: Star,
+                  spec: "Sequências Guiadas A-Z"
+                },
+                {
+                  gradient: "from-rose-50 to-white hover:from-rose-100/40",
+                  border: "border-rose-100 hover:border-rose-300",
+                  accent: "bg-rose-500",
+                  accentText: "text-rose-600",
+                  iconBg: "bg-rose-50 text-rose-600 border-rose-100",
+                  badge: "bg-rose-50 text-rose-700 border-rose-100",
+                  icon: Heart,
+                  spec: "Estímulo Motor e Cognitivo"
+                },
+                {
+                  gradient: "from-indigo-50 to-white hover:from-indigo-100/40",
+                  border: "border-indigo-100 hover:border-indigo-300",
+                  accent: "bg-indigo-500",
+                  accentText: "text-indigo-600",
+                  iconBg: "bg-indigo-50 text-indigo-600 border-indigo-100",
+                  badge: "bg-indigo-50 text-indigo-700 border-indigo-100",
+                  icon: Award,
+                  spec: "Fixação & Autoavaliação"
+                }
               ];
-              const borderTheme = colors[i % colors.length];
+              
+              const currentTheme = themes[i % themes.length];
+              const IconComponent = currentTheme.icon;
 
               return (
                 <div 
                   key={block.id}
-                  className="bg-white rounded-2xl border-2 border-slate-100 p-6 text-left relative group hover:border-slate-300 hover:shadow-lg transition-all duration-200 flex flex-col justify-between"
+                  className={`bg-gradient-to-b ${currentTheme.gradient} rounded-3xl border-2 ${currentTheme.border} p-6 sm:p-8 text-left relative group hover:shadow-2xl hover:shadow-slate-200/60 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between overflow-hidden`}
                 >
-                  <div className="space-y-4">
-                    {/* Badge header */}
-                    <div className="flex justify-between items-start gap-2">
-                      <span className="text-xs font-extrabold text-slate-400 font-mono">0{i + 1}.</span>
-                      <span className="text-[10px] font-bold text-gray-500 bg-slate-100 px-2.5 py-1 rounded-full uppercase tracking-wider">
-                        {block.badge}
+                  {/* High quality decorative status/index tag */}
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-transparent to-slate-100/20 group-hover:to-slate-200/40 rounded-bl-full pointer-events-none transition-colors" />
+                  
+                  {/* Vertical left border accent line */}
+                  <div className={`absolute top-0 left-0 w-1.5 h-full ${currentTheme.accent} opacity-80 rounded-l-full`} />
+
+                  <div className="space-y-4 relative">
+                    {/* Header: custom colorful circular badge with icon & styled block number */}
+                    <div className="flex justify-between items-center">
+                      <div className={`w-12 h-12 rounded-2xl ${currentTheme.iconBg} border flex items-center justify-center shadow-xs transform group-hover:scale-110 transition-transform duration-300`}>
+                        <IconComponent className="w-6 h-6 shrink-0" />
+                      </div>
+                      <span className="text-[10px] uppercase font-black text-slate-300 tracking-widest font-mono select-none bg-slate-100/70 border border-slate-200/40 px-2.5 py-1 rounded-md">
+                        Módulo 0{i + 1}
                       </span>
                     </div>
 
-                    <h4 className="text-sm font-extrabold text-sky-950 leading-snug">
-                      {block.title}
-                    </h4>
+                    <div className="space-y-2">
+                      <div className="flex flex-wrap items-center gap-1.5">
+                        <span className={`text-[9px] font-black uppercase tracking-wider px-2.5 py-0.5 rounded-md border ${currentTheme.badge} shadow-2xs`}>
+                          {block.badge}
+                        </span>
+                      </div>
+                      <h4 className="text-base sm:text-lg font-black text-sky-950 leading-tight group-hover:text-blue-900 transition-colors">
+                        {block.title}
+                      </h4>
+                    </div>
 
-                    <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
                       {block.description}
                     </p>
                   </div>
 
-                  <div className="pt-4 mt-4 border-t border-slate-50 flex items-center justify-between text-[11px] text-gray-400">
-                    <span className="flex items-center gap-1 font-semibold"><CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" /> Pronta para uso</span>
-                    <span className="font-mono text-[10px]">A4 Premium Layout</span>
+                  {/* Footer metadata specific to high premium look */}
+                  <div className="pt-6 mt-6 border-t border-slate-100/60 flex items-center justify-between text-[11px] text-slate-400 font-semibold">
+                    <span className={`flex items-center gap-1.5 ${currentTheme.accentText}`}>
+                      <CheckCircle2 className="w-4 h-4" /> {currentTheme.spec}
+                    </span>
+                    <span className="font-mono text-[9px] bg-slate-100 px-2 py-0.5 rounded border border-slate-200/30 uppercase tracking-wider">A4 Premium</span>
                   </div>
                 </div>
               );
@@ -590,20 +675,18 @@ export default function App() {
                 </span>
               </div>
               
-              <div className="p-4 sm:p-6 bg-rose-50/40 border-b border-rose-100/60 flex flex-col justify-center items-center overflow-hidden">
-                <div className="relative w-auto max-w-full flex justify-center items-center bg-white shadow-md border border-slate-200/50 rounded-2xl overflow-hidden p-2 sm:p-3 group-hover:border-rose-300/70 transition-colors">
-                  <span className="absolute top-3 right-3 z-10 text-[9px] font-black tracking-wider text-rose-600 bg-rose-50/90 border border-rose-200 px-2.5 py-0.5 rounded-full uppercase shadow-xs">
-                    Grátis Hoje
-                  </span>
-                  <img 
-                    src="https://i.ibb.co/MkTvcg9r/Chat-GPT-Image-20-de-jun-de-2026-15-33-13.png" 
-                    alt="Bonus 1 - Alfabeto em Libras Ilustrado" 
-                    className="h-44 sm:h-56 md:h-64 lg:h-72 w-auto max-w-full object-contain rounded-xl transform group-hover:scale-[1.04] transition-transform duration-300"
-                    referrerPolicy="no-referrer"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
+              <div className="p-2.5 sm:p-6 bg-rose-50/40 border-b border-rose-100/60 flex flex-col justify-center items-center overflow-hidden relative">
+                <span className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 text-[9px] sm:text-xs font-black tracking-wider text-rose-600 bg-white border border-rose-200/60 px-3 py-1 rounded-full uppercase shadow-sm">
+                  Grátis Hoje
+                </span>
+                <img 
+                  src="https://i.ibb.co/MkTvcg9r/Chat-GPT-Image-20-de-jun-de-2026-15-33-13.png" 
+                  alt="Bonus 1 - Alfabeto em Libras Ilustrado" 
+                  className="w-full h-auto rounded-2xl shadow-md border border-slate-200/30 transform group-hover:scale-[1.03] transition-transform duration-300"
+                  referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <div className="p-6 md:p-8 space-y-4 flex-1 flex flex-col justify-between">
                 <div className="space-y-3">
@@ -636,20 +719,18 @@ export default function App() {
                 </span>
               </div>
 
-              <div className="p-4 sm:p-6 bg-sky-50/40 border-b border-sky-100/60 flex flex-col justify-center items-center overflow-hidden">
-                <div className="relative w-auto max-w-full flex justify-center items-center bg-white shadow-md border border-slate-200/50 rounded-2xl overflow-hidden p-2 sm:p-3 group-hover:border-sky-300/70 transition-colors">
-                  <span className="absolute top-3 right-3 z-10 text-[9px] font-black tracking-wider text-sky-600 bg-sky-50/90 border border-sky-200 px-2.5 py-0.5 rounded-full uppercase shadow-xs">
-                    Grátis Hoje
-                  </span>
-                  <img 
-                    src="https://i.ibb.co/Q3m9YBVM/Chat-GPT-Image-20-de-jun-de-2026-15-26-56.png" 
-                    alt="Bonus 2 - Caça-Palavras em Libras" 
-                    className="h-44 sm:h-56 md:h-64 lg:h-72 w-auto max-w-full object-contain rounded-xl transform group-hover:scale-[1.04] transition-transform duration-300"
-                    referrerPolicy="no-referrer"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
+              <div className="p-2.5 sm:p-6 bg-sky-50/40 border-b border-sky-100/60 flex flex-col justify-center items-center overflow-hidden relative">
+                <span className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 text-[9px] sm:text-xs font-black tracking-wider text-sky-600 bg-white border border-sky-200/60 px-3 py-1 rounded-full uppercase shadow-sm">
+                  Grátis Hoje
+                </span>
+                <img 
+                  src="https://i.ibb.co/Q3m9YBVM/Chat-GPT-Image-20-de-jun-de-2026-15-26-56.png" 
+                  alt="Bonus 2 - Caça-Palavras em Libras" 
+                  className="w-full h-auto rounded-2xl shadow-md border border-slate-200/30 transform group-hover:scale-[1.03] transition-transform duration-300"
+                  referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <div className="p-6 md:p-8 space-y-4 flex-1 flex flex-col justify-between">
                 <div className="space-y-3">
@@ -682,20 +763,18 @@ export default function App() {
                 </span>
               </div>
 
-              <div className="p-4 sm:p-6 bg-emerald-50/40 border-b border-emerald-100/60 flex flex-col justify-center items-center overflow-hidden">
-                <div className="relative w-auto max-w-full flex justify-center items-center bg-white shadow-md border border-slate-200/50 rounded-2xl overflow-hidden p-2 sm:p-3 group-hover:border-emerald-300/70 transition-colors">
-                  <span className="absolute top-3 right-3 z-10 text-[9px] font-black tracking-wider text-emerald-600 bg-emerald-50/90 border border-emerald-200 px-2.5 py-0.5 rounded-full uppercase shadow-xs">
-                    Grátis Hoje
-                  </span>
-                  <img 
-                    src="https://i.ibb.co/n836WCdJ/Chat-GPT-Image-20-de-jun-de-2026-15-36-32.png" 
-                    alt="Bonus 3 - Certificados de Incentivo" 
-                    className="h-44 sm:h-56 md:h-64 lg:h-72 w-auto max-w-full object-contain rounded-xl transform group-hover:scale-[1.04] transition-transform duration-300"
-                    referrerPolicy="no-referrer"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
+              <div className="p-2.5 sm:p-6 bg-emerald-50/40 border-b border-emerald-100/60 flex flex-col justify-center items-center overflow-hidden relative">
+                <span className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 text-[9px] sm:text-xs font-black tracking-wider text-emerald-600 bg-white border border-emerald-200/60 px-3 py-1 rounded-full uppercase shadow-sm">
+                  Grátis Hoje
+                </span>
+                <img 
+                  src="https://i.ibb.co/n836WCdJ/Chat-GPT-Image-20-de-jun-de-2026-15-36-32.png" 
+                  alt="Bonus 3 - Certificados de Incentivo" 
+                  className="w-full h-auto rounded-2xl shadow-md border border-slate-200/30 transform group-hover:scale-[1.03] transition-transform duration-300"
+                  referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <div className="p-6 md:p-8 space-y-4 flex-1 flex flex-col justify-between">
                 <div className="space-y-3">
