@@ -583,7 +583,7 @@ export default function App() {
             {/* BONUS CARD 1: Alfabeto em Libras Ilustrado */}
             <div className="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
               <div className="p-5 bg-slate-50 border-b border-slate-100 flex justify-center items-center overflow-hidden">
-                <div className="w-full h-full flex justify-center items-center rounded-[24px] bg-white shadow-md border border-slate-200/60 overflow-hidden">
+                <div className="w-full h-full flex justify-center items-center bg-white shadow-md border border-slate-200/60 overflow-hidden">
                   <img 
                     src="https://i.ibb.co/MkTvcg9r/Chat-GPT-Image-20-de-jun-de-2026-15-33-13.png" 
                     alt="Bonus 1 - Alfabeto em Libras Ilustrado" 
@@ -616,7 +616,7 @@ export default function App() {
             {/* BONUS CARD 2: Caça-Palavras em Libras */}
             <div className="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
               <div className="p-5 bg-slate-50 border-b border-slate-100 flex justify-center items-center overflow-hidden">
-                <div className="w-full h-full flex justify-center items-center rounded-[24px] bg-white shadow-md border border-slate-200/60 overflow-hidden">
+                <div className="w-full h-full flex justify-center items-center bg-white shadow-md border border-slate-200/60 overflow-hidden">
                   <img 
                     src="https://i.ibb.co/Q3m9YBVM/Chat-GPT-Image-20-de-jun-de-2026-15-26-56.png" 
                     alt="Bonus 2 - Caça-Palavras em Libras" 
@@ -649,7 +649,7 @@ export default function App() {
             {/* BONUS CARD 3: Certificados de Amigo da Libras */}
             <div className="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
               <div className="p-5 bg-slate-50 border-b border-slate-100 flex justify-center items-center overflow-hidden">
-                <div className="w-full h-full flex justify-center items-center rounded-[24px] bg-white shadow-md border border-slate-200/60 overflow-hidden">
+                <div className="w-full h-full flex justify-center items-center bg-white shadow-md border border-slate-200/60 overflow-hidden">
                   <img 
                     src="https://i.ibb.co/n836WCdJ/Chat-GPT-Image-20-de-jun-de-2026-15-36-32.png" 
                     alt="Bonus 3 - Certificados de Incentivo" 
