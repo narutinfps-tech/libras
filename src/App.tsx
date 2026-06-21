@@ -561,45 +561,59 @@ export default function App() {
       </section>
 
       {/* SECTION: EXCLUSIVE BONUSES (BÔNUS EXCLUSIVOS) */}
-      <section className="py-20 bg-slate-100 border-b border-sky-100 relative overflow-hidden">
-        {/* Playful background detail */}
-        <div className="absolute top-10 left-10 w-48 h-48 bg-sky-200/40 rounded-full blur-3xl pointer-events-none"></div>
-        <div className="absolute bottom-10 right-10 w-64 h-64 bg-indigo-200/40 rounded-full blur-3xl pointer-events-none"></div>
+      <section className="py-24 bg-gradient-to-b from-sky-50 via-slate-50 to-white border-y border-slate-200/60 relative overflow-hidden">
+        {/* Colorful glowing ambient blobs */}
+        <div className="absolute top-1/4 left-10 w-72 h-72 bg-rose-200/30 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-amber-200/25 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute top-10 right-1/3 w-64 h-64 bg-indigo-200/30 rounded-full blur-3xl pointer-events-none"></div>
 
         <div className="max-w-6xl mx-auto px-4 md:px-6 relative z-10">
-          <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-            <span className="text-xs font-black text-rose-600 uppercase tracking-widest bg-rose-50 border border-rose-100 py-1.5 px-4 rounded-full inline-flex items-center gap-1.5 shadow-sm">
-              <Sparkles className="w-3.5 h-3.5 fill-rose-500 text-rose-500 animate-pulse" /> Presentes Especiais Para Você
+          <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+            <span className="text-[10px] sm:text-xs font-black text-rose-600 uppercase tracking-widest bg-rose-50 border border-rose-100 py-1.5 px-3.5 sm:py-2 sm:px-5 rounded-full inline-flex items-center gap-1.5 sm:gap-2 shadow-sm animate-pulse">
+              <Sparkles className="w-4 h-4 fill-rose-500 text-rose-500" /> PRESENTES EXCLUSIVOS E 100% GRATUITOS
             </span>
-            <h3 className="text-3xl md:text-4xl font-extrabold text-sky-950 tracking-tight leading-tight">
-              Bônus Exclusivos Inteiramente Gratuitos
+            <h3 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-sky-950 tracking-tight leading-snug md:leading-tight">
+              Turbine o Aprendizado com <span className="text-rose-500 bg-rose-50 px-2 py-1 rounded-xl border border-rose-100 inline-block mt-2 sm:mt-0 shadow-xs">Estes 3 Super Bônus</span>
             </h3>
-            <p className="text-sm text-slate-600">
-              Garantindo sua cópia do material principal hoje, você também recebe acesso imediato a estes três complementos lúdicos imperdíveis:
+            <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed">
+              Garantindo o material principal hoje, você recebe imediatamente um pacote avaliado em <span className="text-rose-600 font-bold underline">R$ 52,70</span> inteiramente de <span className="font-extrabold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 inline-block shadow-xs">GRAÇA</span>!
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* BONUS CARD 1: Alfabeto em Libras Ilustrado */}
-            <div className="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-              <div className="p-5 bg-slate-50 border-b border-slate-100 flex justify-center items-center overflow-hidden">
-                <div className="w-full h-full flex justify-center items-center bg-white shadow-md border border-slate-200/60 rounded-2xl overflow-hidden">
+            <div className="bg-white rounded-3xl overflow-hidden border-2 border-rose-100/80 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group relative">
+              {/* Ribbon tag / value label */}
+              <div className="absolute top-4 left-4 z-20">
+                <span className="bg-rose-500 text-white font-black text-[10px] tracking-wider uppercase px-3 py-1 rounded-full shadow-md">
+                  Economize R$ 19,90
+                </span>
+              </div>
+              
+              <div className="p-4 sm:p-6 bg-rose-50/40 border-b border-rose-100/60 flex flex-col justify-center items-center overflow-hidden">
+                <div className="relative w-auto max-w-full flex justify-center items-center bg-white shadow-md border border-slate-200/50 rounded-2xl overflow-hidden p-2 sm:p-3 group-hover:border-rose-300/70 transition-colors">
+                  <span className="absolute top-3 right-3 z-10 text-[9px] font-black tracking-wider text-rose-600 bg-rose-50/90 border border-rose-200 px-2.5 py-0.5 rounded-full uppercase shadow-xs">
+                    Grátis Hoje
+                  </span>
                   <img 
                     src="https://i.ibb.co/MkTvcg9r/Chat-GPT-Image-20-de-jun-de-2026-15-33-13.png" 
                     alt="Bonus 1 - Alfabeto em Libras Ilustrado" 
-                    className="h-52 sm:h-56 md:h-64 lg:h-72 w-full object-contain transform group-hover:scale-[1.04] transition-transform duration-300"
+                    className="h-44 sm:h-56 md:h-64 lg:h-72 w-auto max-w-full object-contain rounded-xl transform group-hover:scale-[1.04] transition-transform duration-300"
                     referrerPolicy="no-referrer"
                     loading="lazy"
                     decoding="async"
                   />
                 </div>
               </div>
-              <div className="p-5 md:p-6 space-y-4 flex-1 flex flex-col justify-between">
+              <div className="p-6 md:p-8 space-y-4 flex-1 flex flex-col justify-between">
                 <div className="space-y-3">
-                  <span className="text-[10px] font-extrabold text-white bg-gradient-to-r from-rose-500 to-amber-500 px-3 py-1 rounded-full uppercase tracking-wider inline-block">
-                    SUPER BÔNUS 1 • GRÁTIS
-                  </span>
-                  <h4 className="text-base md:text-lg font-extrabold text-sky-950 leading-tight">
+                  <div className="flex items-center gap-1.5 flex-wrap">
+                    <span className="text-[9px] font-extrabold text-white bg-gradient-to-r from-rose-500 to-amber-500 px-2.5 py-0.5 rounded-md uppercase tracking-wider">
+                      SUPER BÔNUS 1 • GRÁTIS
+                    </span>
+                    <span className="text-xs text-slate-400 font-semibold line-through">De R$ 19,90</span>
+                  </div>
+                  <h4 className="text-lg md:text-xl font-black text-sky-950 leading-tight">
                     Alfabeto em Libras Ilustrado
                   </h4>
                   <p className="text-xs text-slate-600 leading-relaxed font-normal">
@@ -614,25 +628,38 @@ export default function App() {
             </div>
 
             {/* BONUS CARD 2: Caça-Palavras em Libras */}
-            <div className="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-              <div className="p-5 bg-slate-50 border-b border-slate-100 flex justify-center items-center overflow-hidden">
-                <div className="w-full h-full flex justify-center items-center bg-white shadow-md border border-slate-200/60 rounded-2xl overflow-hidden">
+            <div className="bg-white rounded-3xl overflow-hidden border-2 border-sky-100/80 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group relative">
+              {/* Ribbon tag / value label */}
+              <div className="absolute top-4 left-4 z-20">
+                <span className="bg-sky-500 text-white font-black text-[10px] tracking-wider uppercase px-3 py-1 rounded-full shadow-md">
+                  Economize R$ 17,90
+                </span>
+              </div>
+
+              <div className="p-4 sm:p-6 bg-sky-50/40 border-b border-sky-100/60 flex flex-col justify-center items-center overflow-hidden">
+                <div className="relative w-auto max-w-full flex justify-center items-center bg-white shadow-md border border-slate-200/50 rounded-2xl overflow-hidden p-2 sm:p-3 group-hover:border-sky-300/70 transition-colors">
+                  <span className="absolute top-3 right-3 z-10 text-[9px] font-black tracking-wider text-sky-600 bg-sky-50/90 border border-sky-200 px-2.5 py-0.5 rounded-full uppercase shadow-xs">
+                    Grátis Hoje
+                  </span>
                   <img 
                     src="https://i.ibb.co/Q3m9YBVM/Chat-GPT-Image-20-de-jun-de-2026-15-26-56.png" 
                     alt="Bonus 2 - Caça-Palavras em Libras" 
-                    className="h-52 sm:h-56 md:h-64 lg:h-72 w-full object-contain transform group-hover:scale-[1.04] transition-transform duration-300"
+                    className="h-44 sm:h-56 md:h-64 lg:h-72 w-auto max-w-full object-contain rounded-xl transform group-hover:scale-[1.04] transition-transform duration-300"
                     referrerPolicy="no-referrer"
                     loading="lazy"
                     decoding="async"
                   />
                 </div>
               </div>
-              <div className="p-5 md:p-6 space-y-4 flex-1 flex flex-col justify-between">
+              <div className="p-6 md:p-8 space-y-4 flex-1 flex flex-col justify-between">
                 <div className="space-y-3">
-                  <span className="text-[10px] font-extrabold text-white bg-gradient-to-r from-sky-500 to-indigo-500 px-3 py-1 rounded-full uppercase tracking-wider inline-block">
-                    SUPER BÔNUS 2 • GRÁTIS
-                  </span>
-                  <h4 className="text-base md:text-lg font-extrabold text-sky-950 leading-tight">
+                  <div className="flex items-center gap-1.5 flex-wrap">
+                    <span className="text-[9px] font-extrabold text-white bg-gradient-to-r from-sky-500 to-indigo-500 px-2.5 py-0.5 rounded-md uppercase tracking-wider">
+                      SUPER BÔNUS 2 • GRÁTIS
+                    </span>
+                    <span className="text-xs text-slate-400 font-semibold line-through">De R$ 17,90</span>
+                  </div>
+                  <h4 className="text-lg md:text-xl font-black text-sky-950 leading-tight">
                     Caça-Palavras Lúdico em Libras
                   </h4>
                   <p className="text-xs text-slate-600 leading-relaxed font-normal">
@@ -647,25 +674,38 @@ export default function App() {
             </div>
 
             {/* BONUS CARD 3: Certificados de Amigo da Libras */}
-            <div className="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-              <div className="p-5 bg-slate-50 border-b border-slate-100 flex justify-center items-center overflow-hidden">
-                <div className="w-full h-full flex justify-center items-center bg-white shadow-md border border-slate-200/60 rounded-2xl overflow-hidden">
+            <div className="bg-white rounded-3xl overflow-hidden border-2 border-emerald-100/80 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group relative">
+              {/* Ribbon tag / value label */}
+              <div className="absolute top-4 left-4 z-20">
+                <span className="bg-emerald-500 text-white font-black text-[10px] tracking-wider uppercase px-3 py-1 rounded-full shadow-md">
+                  Economize R$ 14,90
+                </span>
+              </div>
+
+              <div className="p-4 sm:p-6 bg-emerald-50/40 border-b border-emerald-100/60 flex flex-col justify-center items-center overflow-hidden">
+                <div className="relative w-auto max-w-full flex justify-center items-center bg-white shadow-md border border-slate-200/50 rounded-2xl overflow-hidden p-2 sm:p-3 group-hover:border-emerald-300/70 transition-colors">
+                  <span className="absolute top-3 right-3 z-10 text-[9px] font-black tracking-wider text-emerald-600 bg-emerald-50/90 border border-emerald-200 px-2.5 py-0.5 rounded-full uppercase shadow-xs">
+                    Grátis Hoje
+                  </span>
                   <img 
                     src="https://i.ibb.co/n836WCdJ/Chat-GPT-Image-20-de-jun-de-2026-15-36-32.png" 
                     alt="Bonus 3 - Certificados de Incentivo" 
-                    className="h-52 sm:h-56 md:h-64 lg:h-72 w-full object-contain transform group-hover:scale-[1.04] transition-transform duration-300"
+                    className="h-44 sm:h-56 md:h-64 lg:h-72 w-auto max-w-full object-contain rounded-xl transform group-hover:scale-[1.04] transition-transform duration-300"
                     referrerPolicy="no-referrer"
                     loading="lazy"
                     decoding="async"
                   />
                 </div>
               </div>
-              <div className="p-5 md:p-6 space-y-4 flex-1 flex flex-col justify-between">
+              <div className="p-6 md:p-8 space-y-4 flex-1 flex flex-col justify-between">
                 <div className="space-y-3">
-                  <span className="text-[10px] font-extrabold text-white bg-gradient-to-r from-emerald-500 to-teal-500 px-3 py-1 rounded-full uppercase tracking-wider inline-block">
-                    SUPER BÔNUS 3 • GRÁTIS
-                  </span>
-                  <h4 className="text-base md:text-lg font-extrabold text-sky-950 leading-tight">
+                  <div className="flex items-center gap-1.5 flex-wrap">
+                    <span className="text-[9px] font-extrabold text-white bg-gradient-to-r from-emerald-500 to-teal-500 px-2.5 py-0.5 rounded-md uppercase tracking-wider">
+                      SUPER BÔNUS 3 • GRÁTIS
+                    </span>
+                    <span className="text-xs text-slate-400 font-semibold line-through">De R$ 14,90</span>
+                  </div>
+                  <h4 className="text-lg md:text-xl font-black text-sky-950 leading-tight">
                     Certificados de Incentivo & Progresso
                   </h4>
                   <p className="text-xs text-slate-600 leading-relaxed font-normal">
@@ -678,6 +718,14 @@ export default function App() {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* BOTTOM TRUST / VALUE REASSURANCE */}
+          <div className="mt-16 text-center max-w-xl mx-auto bg-amber-50 border border-amber-200/75 rounded-2xl p-5 shadow-sm">
+            <p className="text-xs text-amber-800 font-bold flex items-center justify-center gap-2">
+              <Sparkles className="w-4 h-4 text-amber-600 shrink-0 fill-amber-500/30 animate-spin" />
+              OS BÔNUS SERÃO ENVIADOS AUTOMATICAMENTE JUNTO AO MATERIAL, SEM CUSTO ADICIONAL!
+            </p>
           </div>
         </div>
       </section>
